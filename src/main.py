@@ -49,12 +49,16 @@ def main() -> None:
         return
     args = sys.argv
     if len(args) < 2:
-        print("Enter username")
+        print("Enter flag")
         return
-    username = args[1]
-    profile = get_profile(username, email)
-    if profile:
-        display_profile(profile)
+    if args[1] == "profile":
+        if len(args) < 3:
+            print("Enter username")
+            return
+        username = args[2]
+        profile = get_profile(username, email)
+        if profile:
+            display_profile(profile)
 
 if __name__ == "__main__":
     main()
