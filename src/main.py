@@ -1,5 +1,7 @@
+from ast import arg
 import os
 import requests
+import sys
 from dotenv import load_dotenv
 
 from constants import TIMEOUT
@@ -45,7 +47,11 @@ def main() -> None:
     if not email:
         print("Set CHESS_CONTACT_EMAIL in your .env")
         return
-    username = input("Chess.com username: ").strip().lower()
+    args = sys.argv
+    if len(args) < 2:
+        print("Enter username")
+        return
+    username = args[1]
     profile = get_profile(username, email)
     if profile:
         display_profile(profile)
