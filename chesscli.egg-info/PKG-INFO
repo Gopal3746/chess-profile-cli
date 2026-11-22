@@ -1,0 +1,12 @@
+Metadata-Version: 2.4
+Name: chesscli
+Version: 0.1.0
+Summary: Explore Chess.com players from your terminal
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Requires-Dist: requests
+Requires-Dist: python-dotenv
+
+This is a Personal Project for Bootdev.
+I am building a chess profile cli using Chess.com API
+Going to fetch streak, record, country, name, along with animations

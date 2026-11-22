@@ -5,6 +5,7 @@ import sys
 from dotenv import load_dotenv
 
 from chesscli.api import ChessAPIError, NotFoundError, get_profile
+from chesscli import __version__
 
 
 # ---------- display ----------
@@ -33,6 +34,7 @@ def build_parser() -> argparse.ArgumentParser:
         prog="chesscli",
         description="Explore Chess.com players from your terminal.",
     )
+    parser.add_argument("--version", action="version", version=f"%(prog)s {__version__}")
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_profile = sub.add_parser("profile", help="Show a player's profile")
